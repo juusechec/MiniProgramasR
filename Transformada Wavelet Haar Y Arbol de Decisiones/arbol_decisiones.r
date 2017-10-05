@@ -47,7 +47,7 @@ xtrain=x[train,]
 xtest=x[test,]
 
 # crear primero el arbol usando parametros predeterminados
-t0=rpart(as.factor(TIPO) ~ MAXIMO_X+MAXIMO_Y+MAXIMO_Z+MINIMO_X+MINIMO_Y+MINIMO_Z+MEDIA_X+MEDIA_Y+MEDIA_Z+MODA_X+MODA_Y+MODA_Z+MEDIANA_X+MEDIANA_Y+MEDIANA_Z+VARIANZA_X+VARIANZA_Y+VARIANZA_Z,
+t0=rpart(as.factor(TIPO) ~ VARIANZA_X+VARIANZA_Y+VARIANZA_Z,
          data = xtrain, method = "class",
          control = rpart.control(minsplit = 0, cp = 0.0))
 prp(t0, extra = 1)
